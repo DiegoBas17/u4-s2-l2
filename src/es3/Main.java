@@ -1,14 +1,16 @@
 package es3;
 
-import java.util.HashMap;
-
 public class Main {
     public static void main(String[] args) {
-        HashMap<String, Integer> rubrica = new HashMap<>();
+        Rubrica rubrica = new Rubrica();
+        rubrica.inserisciContatto("Gabriel", 11111);
+        rubrica.inserisciContatto("Eddy", 22222);
+        rubrica.inserisciContatto("Arianna", 33333);
+        rubrica.inserisciContatto("Yuri", 44444);
 
+        System.out.println(rubrica);
+        rubrica.cancellaContatto("Eddy");
+        System.out.println(rubrica);
     }
 
-    public void aggiungiNuovoNumero(String nome, int numero) {
-
-    }
 }
