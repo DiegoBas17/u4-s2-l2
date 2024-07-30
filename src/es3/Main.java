@@ -11,6 +11,11 @@ public class Main {
         System.out.println(rubrica);
         rubrica.cancellaContatto("Eddy");
         System.out.println(rubrica);
+        System.out.println(rubrica);
+
+        rubrica.getPersonaWithNumber(33333);
+        rubrica.getNumberwithName("Yuri");
+
     }
 
 }

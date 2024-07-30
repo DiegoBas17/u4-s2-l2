@@ -1,6 +1,8 @@
 package es3;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Rubrica {
     private HashMap<String, Integer> rubrica;
@@ -23,12 +25,27 @@ public class Rubrica {
             System.out.println("Il contatto " + nome + " non esiste.");
         }
     }
-    
-    public void getPersonaWithNumber() {
-        for (int i = 0; i < ; i++) {
-            
+
+    public void getPersonaWithNumber(int numero) {
+        List<String> nomi = new ArrayList<>(rubrica.keySet());
+        boolean trovato = false;
+        for (int i = 0; i < nomi.size(); i++) {
+            String nome = nomi.get(i);
+            if (rubrica.get(nome) == numero) {
+                System.out.println("Persona con numero " + numero + ": " + nome);
+                trovato = true;
+                break;
+            }
+        }
+        if (!trovato) {
+            System.out.println("Nessuna persona trovata con il numero: " + numero);
         }
     }
+
+    public void getNumberwithName(String name) {
+        System.out.println("Il numero della persona: " + name + " è " + this.rubrica.get(name));
+    }
+    
 
     @Override
     public String toString() {
@@ -36,4 +53,5 @@ public class Rubrica {
                 "rubrica=" + rubrica +
                 '}';
     }
+
 }
